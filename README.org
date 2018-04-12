@@ -1,34 +1,26 @@
-#vix_servo_device_python
+#+TITLE: vix_servo_device_python
+#+AUTHOR: Peter Polidoro
+#+EMAIL: peterpolidoro@gmail.com
 
-This Python package (vix\_servo\_device) creates a class named
-VixServoDevice, which contains an instance of
-serial\_device2.SerialDevice and adds methods to it to interface to
-Vix Servo balances and scales that use the Vix Servo
-Standard Interface Command Set (MT-SICS).
+* Package Information
+  - Author :: Peter Polidoro
+  - License :: BSD
 
-Authors:
+  This Python package (vix_servo_device) creates a class named
+  VixServoDevice, which contains an instance of
+  serial_device2.SerialDevice and adds methods to it to interface to
+  Vix Servo balances and scales that use the Vix Servo
+  Standard Interface Command Set (MT-SICS).
 
-    Peter Polidoro <polidorop@janelia.hhmi.org>
+* Vix Servo RS232 Setup
 
-Contributors:
+  | BAUDRATE | BIT/PARITY | STOP BITS | HANDSHAKE | END OF LINE  | CHAR SET | CONTINUOUS MODE |
+  |----------+------------+-----------+-----------+--------------+----------+-----------------|
+  |     9600 | 8/NO       |         1 | NONE      | \<CR\>\<LF\> | ANSI/WIN | OFF             |
 
-    James Pells <https://github.com/jpells>
-    Roger Zatkoff <https://github.com/rpzatkoff>
+* Example Usage
 
-License:
-
-    BSD
-
-##Vix Servo RS232 Setup
-
-| BAUDRATE | BIT/PARITY | STOP BITS | HANDSHAKE | END OF LINE  | CHAR SET | CONTINUOUS MODE |
-| :-:      | :-:        | :-:       | :-:       | :-:          | :-:      | :-:             |
-| 9600     | 8/NO       | 1         | NONE      | \<CR\>\<LF\> | ANSI/WIN | OFF             |
-
-##Example Usage
-
-
-```python
+  #+BEGIN_SRC python
 from vix_servo_device import VixServoDevice
 dev = VixServoDevice() # Might automatically find device if one available
 # if it is not found automatically, specify port directly
@@ -51,34 +43,34 @@ False  #does not zero if weight is not stable
 dev.zero()
 'S'   #zeros if weight is stable
 'D'   #zeros if weight is dynamic
-```
+  #+END_SRC
 
-```python
+  #+BEGIN_SRC python
 devs = VixServoDevices()  # Might automatically find all available devices
 # if they are not found automatically, specify ports to use
 devs = VixServoDevices(use_ports=['/dev/ttyUSB0','/dev/ttyUSB1']) # Linux
 devs = VixServoDevices(use_ports=['/dev/tty.usbmodem262471','/dev/tty.usbmodem262472']) # Mac OS X
 devs = VixServoDevices(use_ports=['COM3','COM4']) # Windows
 dev = devs[0]
-```
+  #+END_SRC
 
-##Installation
+* Installation
 
-[Setup Python](https://github.com/janelia-pypi/python_setup)
+  [[https://github.com/janelia-pypi/python_setup][Setup Python]]
 
-###Linux and Mac OS X
+** Linux and Mac OS X
 
-```shell
+   #+BEGIN_SRC sh
 mkdir -p ~/virtualenvs/vix_servo_device
 virtualenv ~/virtualenvs/vix_servo_device
 source ~/virtualenvs/vix_servo_device/bin/activate
 pip install vix_servo_device
-```
+   #+END_SRC
 
-###Windows
+** Windows
 
-```shell
+   #+BEGIN_SRC sh
 virtualenv C:\virtualenvs\vix_servo_device
 C:\virtualenvs\vix_servo_device\Scripts\activate
 pip install vix_servo_device
-```
+   #+END_SRC
