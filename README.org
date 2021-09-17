@@ -1,6 +1,6 @@
 #+TITLE: vix_servo_device_python
 #+AUTHOR: Peter Polidoro
-#+EMAIL: peterpolidoro@gmail.com
+#+EMAIL: peter@polidoro.io
 
 * Package Information
   - Name :: vix_servo_device_python
@@ -8,7 +8,7 @@
   - License :: BSD
   - URL :: https://github.com/janelia-pypi/vix_servo_device_python
   - Author :: Peter Polidoro
-  - Email :: peterpolidoro@gmail.com
+  - Email :: peter@polidoro.io
 
   This Python package (vix_servo_device) creates a class named
   VixServoDevice, which contains an instance of
