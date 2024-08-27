@@ -6,7 +6,7 @@
   - Name :: vix_servo_device_python
   - Version :: 1.0.0
   - License :: BSD
-  - URL :: https://github.com/janelia-pypi/vix_servo_device_python
+  - URL :: https://github.com/janelia-python/vix_servo_device_python
   - Author :: Peter Polidoro
   - Email :: peter@polidoro.io
 
@@ -60,7 +60,7 @@
 
 * Installation
 
-  [[https://github.com/janelia-pypi/python_setup]]
+  [[https://github.com/janelia-python/python_setup]]
 
 ** Linux and Mac OS X
 
